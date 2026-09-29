@@ -1,4 +1,4 @@
-// Renders assets/stats.svg: a year of contributions drawn as an oscilloscope trace.
+// Renders stats.svg: a year of contributions drawn as a constellation.
 // Usage: GITHUB_TOKEN=... node scripts/stats.mjs <login> <outfile>
 import { writeFileSync } from "node:fs";
 
@@ -38,78 +38,60 @@ for (let i = days.length - 1; i >= 0; i--) {
 }
 const best = days.reduce((a, d) => (d.contributionCount > a.contributionCount ? d : a), days[0]);
 
-// Trace
-const X0 = 330, X1 = 970, Y0 = 44, Y1 = 196;
+// Constellation: one star per week, height and size follow that week's count.
+const X0 = 340, X1 = 965, Y0 = 40, Y1 = 190;
 const max = Math.max(...weeks, 1);
-const pts = weeks.map((v, i) => [X0 + (i / (weeks.length - 1)) * (X1 - X0), Y1 - (v / max) * (Y1 - Y0)]);
-let d = `M${pts[0][0].toFixed(1)},${pts[0][1].toFixed(1)}`;
-for (let i = 1; i < pts.length; i++) {
-  const [x0, y0] = pts[i - 1], [x1, y1] = pts[i], mx = (x0 + x1) / 2;
-  d += ` C${mx.toFixed(1)},${y0.toFixed(1)} ${mx.toFixed(1)},${y1.toFixed(1)} ${x1.toFixed(1)},${y1.toFixed(1)}`;
-}
-const area = `${d} L${X1},${Y1} L${X0},${Y1} Z`;
-const [lx, ly] = pts[pts.length - 1];
-
-const grid = [];
-for (let x = X0; x <= X1; x += 64) grid.push(`<line x1="${x}" y1="${Y0 - 14}" x2="${x}" y2="${Y1}"/>`);
-for (let y = Y0 - 14; y <= Y1; y += 38) grid.push(`<line x1="${X0}" y1="${y}" x2="${X1}" y2="${y}"/>`);
+const pts = weeks.map((v, i) => [X0 + (i / (weeks.length - 1)) * (X1 - X0), Y1 - Math.sqrt(v / max) * (Y1 - Y0), v]);
+const line = "M" + pts.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join(" L");
+const starPath = (x, y, s) => `M${x} ${y - s} Q${x} ${y} ${x + s} ${y} Q${x} ${y} ${x} ${y + s} Q${x} ${y} ${x - s} ${y} Q${x} ${y} ${x} ${y - s}Z`;
+const starsSvg = pts.map(([x, y, v], i) => v
+  ? `<path class="st" style="animation-delay:${(0.4 + i * 0.03).toFixed(2)}s, ${(-(i % 7) * 0.4).toFixed(1)}s" d="${starPath(+x.toFixed(1), +y.toFixed(1), +(3 + (v / max) * 7).toFixed(1))}"/>`
+  : `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="1.2" fill="#6b5aa6"/>`).join("");
 
 const fmt = (n) => n.toLocaleString("en-US");
 const rows = [
-  ["CONTRIBUTIONS / YR", fmt(cal.totalContributions)],
-  ["CURRENT STREAK", `${current}d`],
-  ["LONGEST STREAK", `${longest}d`],
-  ["PEAK DAY", `${best.contributionCount} · ${best.date.slice(5)}`],
-  ["PRS · COMMITS", `${u.contributionsCollection.totalPullRequestContributions} · ${fmt(u.contributionsCollection.totalCommitContributions)}`],
+  ["contributions this year", fmt(cal.totalContributions)],
+  ["current streak", `${current} days`],
+  ["longest streak", `${longest} days`],
+  ["best day", `${best.contributionCount} on ${best.date.slice(5).replace("-", "/")}`],
+  ["prs · commits", `${u.contributionsCollection.totalPullRequestContributions} · ${fmt(u.contributionsCollection.totalCommitContributions)}`],
 ];
 const stats = rows.map(([k, v], i) => `
-    <g class="row" style="animation-delay:${(i * 0.15).toFixed(2)}s">
-      <text x="30" y="${56 + i * 36}" class="k">${k}</text>
-      <text x="290" y="${56 + i * 36}" class="v" text-anchor="end">${v}</text>
+    <g class="row" style="animation-delay:${(i * 0.12).toFixed(2)}s">
+      <text x="32" y="${58 + i * 36}" class="k">${k}</text>
+      <text x="300" y="${58 + i * 36}" class="v" text-anchor="end">${v}</text>
     </g>`).join("");
 
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 240" width="1000" height="240">
   <defs>
-    <filter id="glow" x="-10%" y="-30%" width="120%" height="160%">
-      <feGaussianBlur stdDeviation="2.5" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <linearGradient id="fill" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#39ff88" stop-opacity="0.28"/>
-      <stop offset="1" stop-color="#39ff88" stop-opacity="0"/>
-    </linearGradient>
-    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="2" fill="#000" opacity="0.3"/></pattern>
-    <radialGradient id="bg" cx="65%" cy="50%" r="80%"><stop offset="0" stop-color="#0c1a10"/><stop offset="1" stop-color="#040806"/></radialGradient>
-    <clipPath id="c"><rect width="1000" height="240" rx="16"/></clipPath>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1030"/><stop offset=".6" stop-color="#2a1d5c"/><stop offset="1" stop-color="#4a3070"/></linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <clipPath id="c"><rect width="1000" height="240" rx="20"/></clipPath>
   </defs>
   <style>
-    text { font-family: 'JetBrains Mono', 'SF Mono', ui-monospace, Menlo, Consolas, monospace; }
-    .k { font-size: 11px; fill: #2f8a50; letter-spacing: 2px; }
-    .v { font-size: 18px; font-weight: 700; fill: #39ff88; }
-    .t { font-size: 11px; fill: #2f8a50; letter-spacing: 2px; }
-    .grid line { stroke: #12301a; stroke-width: 1; }
-    .row { opacity: 0; animation: in .4s ease-out forwards; }
-    @keyframes in { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: none; } }
-    .trace { fill: none; stroke: #39ff88; stroke-width: 2.2; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.4s ease-out .3s forwards; }
-    .area { opacity: 0; animation: show .8s ease-out 2.2s forwards; }
+    text { font-family: 'Hiragino Maru Gothic ProN', 'M PLUS Rounded 1c', 'Nunito', 'Yu Gothic', system-ui, sans-serif; }
+    .k { font-size: 14px; fill: #a99bd6; }
+    .v { font-size: 18px; font-weight: 800; fill: #ffd1dc; }
+    .t { font-size: 12px; fill: #a99bd6; letter-spacing: 2px; }
+    .row { opacity: 0; animation: in .5s ease-out forwards; }
+    @keyframes in { from { opacity: 0; transform: translateX(-6px); } to { opacity: 1; transform: none; } }
+    .ln { fill: none; stroke: #c8b6ff; stroke-opacity: .45; stroke-width: 1.2; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.6s ease-out .3s forwards; }
     @keyframes draw { to { stroke-dashoffset: 0; } }
-    @keyframes show { to { opacity: 1; } }
-    .head { fill: #d8ffe6; opacity: 0; animation: show .1s 2.6s forwards, pulse 1.4s 2.7s ease-in-out infinite; }
-    @keyframes pulse { 50% { r: 7; } }
+    .st { fill: #fff4d6; opacity: 0; animation: pop .4s ease-out forwards, tw 3s ease-in-out 3s infinite; }
+    @keyframes pop { to { opacity: 1; } }
+    @keyframes tw { 50% { opacity: .45; } }
   </style>
   <g clip-path="url(#c)">
-    <rect width="1000" height="240" fill="url(#bg)"/>
-    <line x1="310" y1="24" x2="310" y2="216" stroke="#1d4a28"/>
-    <g class="grid">${grid.join("")}</g>
-    <path class="area" d="${area}" fill="url(#fill)"/>
-    <path class="trace" pathLength="1" d="${d}" filter="url(#glow)"/>
-    <circle class="head" cx="${lx.toFixed(1)}" cy="${ly.toFixed(1)}" r="4" filter="url(#glow)"/>
-    <text x="${X0}" y="220" class="t">52 WEEKS AGO</text>
-    <text x="${X1}" y="220" class="t" text-anchor="end">NOW · PEAK ${max}/WK</text>
+    <rect width="1000" height="240" fill="url(#sky)"/>
+    <circle cx="930" cy="60" r="90" fill="#fff4d6" opacity=".05"/>
+    <line x1="322" y1="30" x2="322" y2="210" stroke="#ffb7c5" stroke-opacity=".25" stroke-dasharray="2 6" stroke-linecap="round"/>
+    <path class="ln" pathLength="1" d="${line}"/>
+    <g filter="url(#glow)">${starsSvg}</g>
+    <text x="${X0}" y="222" class="t">52 weeks ago</text>
+    <text x="${X1}" y="222" class="t" text-anchor="end">now ☾ best week ${max}</text>
     ${stats}
-    <rect width="1000" height="240" fill="url(#scan)"/>
   </g>
-  <rect x="1" y="1" width="998" height="238" rx="15" fill="none" stroke="#1d4a28" stroke-width="2"/>
+  <rect x="1" y="1" width="998" height="238" rx="19" fill="none" stroke="#ffb7c5" stroke-opacity=".3" stroke-width="1.5"/>
 </svg>
 `;
 writeFileSync(outfile, svg);

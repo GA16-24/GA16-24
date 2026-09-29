@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/header.svg" width="100%" alt="GA24 on an oscilloscope screen"/>
+  <img src="assets/header.svg" width="100%" alt="GA24 under a full moon"/>
 </p>
 
 <p align="center">
@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/GA16-24/GA16-24/output/stats.svg" width="100%" alt="Contribution stats drawn as an oscilloscope trace"/>
+  <img src="https://raw.githubusercontent.com/GA16-24/GA16-24/output/stats.svg" width="100%" alt="Contribution stats drawn as a constellation"/>
 </p>
 
 <p align="center">

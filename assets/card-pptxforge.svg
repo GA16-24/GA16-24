@@ -1,66 +1,57 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 230" width="490" height="230">
   <defs>
-    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="2.5" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1030"/><stop offset=".55" stop-color="#2a1d5c"/><stop offset="1" stop-color="#5b3a7a"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="2" fill="#000" opacity="0.3"/></pattern>
-    <radialGradient id="bg" cx="80%" cy="40%" r="90%"><stop offset="0" stop-color="#0c1a10"/><stop offset="1" stop-color="#040806"/></radialGradient>
-    <clipPath id="c"><rect width="490" height="230" rx="16"/></clipPath>
+    <clipPath id="c"><rect width="490" height="230" rx="20"/></clipPath>
   </defs>
   <style>
-    text { font-family: 'JetBrains Mono', 'SF Mono', ui-monospace, Menlo, Consolas, monospace; }
-    .name { font-size: 24px; font-weight: 800; fill: #39ff88; }
-    .desc { font-size: 13px; fill: #8dffb9; }
-    .meta { font-size: 11px; fill: #2f8a50; letter-spacing: 2px; }
-    .tag { font-size: 11px; fill: #39ff88; }
-    .chip { fill: none; stroke: #1d4a28; }
-    .deck { transform: translate(410px, 70px); }
+    text { font-family: 'Hiragino Maru Gothic ProN', 'M PLUS Rounded 1c', 'Nunito', 'Yu Gothic', 'PingFang SC', system-ui, sans-serif; }
+    .m { font-size: 11px; fill: #a99bd6; letter-spacing: 3px; font-weight: 700; }
+    .n { font-size: 26px; font-weight: 800; fill: #ffd1dc; }
+    .d { font-size: 13.5px; fill: #efe6ff; }
+    .g { font-size: 12px; fill: #ffd1dc; }
+    .tw { animation: tw 3s ease-in-out infinite; }
+    @keyframes tw { 0%, 100% { opacity: .25; } 50% { opacity: 1; } }
+    .deck { transform: translate(400px, 78px); }
     .s { animation: deal 6s cubic-bezier(.6,0,.3,1) infinite; opacity: 0; }
     @keyframes deal {
       0% { transform: translate(40px, 30px) rotate(12deg) scale(.7); opacity: 0; }
-      12% { opacity: 1; }
-      25% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 1; }
+      12% { opacity: 1; } 25% { transform: none; opacity: 1; }
       50% { transform: translate(-22px, -14px) rotate(-8deg) scale(.9); opacity: .6; }
-      75% { transform: translate(-40px, -26px) rotate(-16deg) scale(.8); opacity: .25; }
-      100% { transform: translate(-56px, -36px) rotate(-22deg) scale(.7); opacity: 0; }
-    }
+      100% { transform: translate(-56px, -36px) rotate(-22deg) scale(.7); opacity: 0; } }
   </style>
   <g clip-path="url(#c)">
-    <rect width="490" height="230" fill="url(#bg)"/>
-    <g><g class="deck" filter="url(#glow)"><g class="s" style="animation-delay:0.0s">
-        <rect x="-50" y="-30" width="100" height="60" rx="4" fill="#07120a" stroke="#39ff88" stroke-width="1.5"/>
-        <rect x="-38" y="-18" width="40" height="6" rx="2" fill="#39ff88"/>
-        <rect x="-38" y="-4" width="60" height="3" rx="1.5" fill="#2f8a50"/>
-        <rect x="-38" y="4" width="48" height="3" rx="1.5" fill="#2f8a50"/>
-        <circle cx="30" cy="14" r="6" fill="none" stroke="#8dffb9" stroke-width="1.2"/>
-      </g><g class="s" style="animation-delay:-1.5s">
-        <rect x="-50" y="-30" width="100" height="60" rx="4" fill="#07120a" stroke="#39ff88" stroke-width="1.5"/>
-        <rect x="-38" y="-18" width="48" height="6" rx="2" fill="#39ff88"/>
-        <rect x="-38" y="-4" width="60" height="3" rx="1.5" fill="#2f8a50"/>
-        <rect x="-38" y="4" width="48" height="3" rx="1.5" fill="#2f8a50"/>
-        <circle cx="30" cy="14" r="8" fill="none" stroke="#8dffb9" stroke-width="1.2"/>
-      </g><g class="s" style="animation-delay:-3.0s">
-        <rect x="-50" y="-30" width="100" height="60" rx="4" fill="#07120a" stroke="#39ff88" stroke-width="1.5"/>
-        <rect x="-38" y="-18" width="56" height="6" rx="2" fill="#39ff88"/>
-        <rect x="-38" y="-4" width="60" height="3" rx="1.5" fill="#2f8a50"/>
-        <rect x="-38" y="4" width="48" height="3" rx="1.5" fill="#2f8a50"/>
-        <circle cx="30" cy="14" r="10" fill="none" stroke="#8dffb9" stroke-width="1.2"/>
-      </g><g class="s" style="animation-delay:-4.5s">
-        <rect x="-50" y="-30" width="100" height="60" rx="4" fill="#07120a" stroke="#39ff88" stroke-width="1.5"/>
-        <rect x="-38" y="-18" width="64" height="6" rx="2" fill="#39ff88"/>
-        <rect x="-38" y="-4" width="60" height="3" rx="1.5" fill="#2f8a50"/>
-        <rect x="-38" y="4" width="48" height="3" rx="1.5" fill="#2f8a50"/>
-        <circle cx="30" cy="14" r="12" fill="none" stroke="#8dffb9" stroke-width="1.2"/>
-      </g></g></g>
-    <text x="26" y="36" class="meta">PROJECT 01 · PUBLIC</text>
-    <text x="26" y="68" class="name" filter="url(#glow)">pptxforge</text>
-    <text x="26" y="94" class="desc">PowerPoint decks from Python.</text>
-    <text x="26" y="113" class="desc">Themed layouts, native 3D models</text>
-    <text x="26" y="132" class="desc">that morph between slides and</text>
-    <text x="26" y="151" class="desc">cinematic transitions.</text>
-    <rect x="26" y="176" width="60" height="24" rx="12" class="chip"/><text x="35" y="192" class="tag">python</text><rect x="94" y="176" width="46" height="24" rx="12" class="chip"/><text x="103" y="192" class="tag">pptx</text><rect x="148" y="176" width="32" height="24" rx="12" class="chip"/><text x="157" y="192" class="tag">3d</text><rect x="188" y="176" width="46" height="24" rx="12" class="chip"/><text x="197" y="192" class="tag">pypi</text>
-    <rect width="490" height="230" fill="url(#scan)"/>
+    <rect width="490" height="230" fill="url(#sky)"/>
+    <circle class="tw" style="animation-delay:-1.08s" cx="345" cy="227" r="1.1" fill="#fff"/><circle class="tw" style="animation-delay:-1.24s" cx="72" cy="167" r="1.4" fill="#fff"/><circle class="tw" style="animation-delay:-2.95s" cx="465" cy="39" r="1.2" fill="#fff"/><circle class="tw" style="animation-delay:-2.23s" cx="245" cy="68" r="0.7" fill="#fff"/><circle class="tw" style="animation-delay:-0.36s" cx="240" cy="206" r="0.8" fill="#fff"/><path class="tw" style="animation-delay:-2.41s" fill="#fff4d6" d="M193 24.2 Q193 27 195.7 27 Q193 27 193 30.4 Q193 27 189.5 27 Q193 27 193 24.2Z"/><circle class="tw" style="animation-delay:-0.98s" cx="354" cy="62" r="0.9" fill="#fff"/><circle class="tw" style="animation-delay:-2.42s" cx="324" cy="113" r="1.1" fill="#fff"/><circle class="tw" style="animation-delay:-1.90s" cx="117" cy="111" r="0.8" fill="#fff"/><circle class="tw" style="animation-delay:-2.87s" cx="386" cy="38" r="1.4" fill="#fff"/><circle class="tw" style="animation-delay:-2.12s" cx="197" cy="206" r="1.5" fill="#fff"/><circle class="tw" style="animation-delay:-1.99s" cx="394" cy="218" r="1.5" fill="#fff"/><circle class="tw" style="animation-delay:-0.21s" cx="348" cy="79" r="0.6" fill="#fff"/><circle class="tw" style="animation-delay:-0.60s" cx="237" cy="223" r="0.7" fill="#fff"/><circle class="tw" style="animation-delay:-2.35s" cx="415" cy="61" r="1.1" fill="#fff"/><path class="tw" style="animation-delay:-2.75s" fill="#fff4d6" d="M488 189.4 Q488 193 491.8 193 Q488 193 488 196.1 Q488 193 485.1 193 Q488 193 488 189.4Z"/><path class="tw" style="animation-delay:-1.89s" fill="#fff4d6" d="M35 59.0 Q35 63 39.8 63 Q35 63 35 67.9 Q35 63 30.9 63 Q35 63 35 59.0Z"/><circle class="tw" style="animation-delay:-1.51s" cx="397" cy="87" r="1.6" fill="#fff"/><circle class="tw" style="animation-delay:-1.34s" cx="373" cy="45" r="1.5" fill="#fff"/><circle class="tw" style="animation-delay:-0.15s" cx="427" cy="107" r="1.4" fill="#fff"/><circle class="tw" style="animation-delay:-2.51s" cx="175" cy="190" r="1.0" fill="#fff"/><circle class="tw" style="animation-delay:-2.17s" cx="446" cy="107" r="0.9" fill="#fff"/><circle class="tw" style="animation-delay:-2.01s" cx="430" cy="108" r="1.4" fill="#fff"/><circle class="tw" style="animation-delay:-0.18s" cx="27" cy="116" r="0.6" fill="#fff"/><circle class="tw" style="animation-delay:-0.73s" cx="278" cy="170" r="1.0" fill="#fff"/>
+    <g class="deck"><g class="s" style="animation-delay:0.0s">
+        <rect x="-50" y="-30" width="100" height="60" rx="8" fill="#fff4d6"/>
+        <rect x="-38" y="-18" width="40" height="7" rx="3.5" fill="#ff9ec0"/>
+        <rect x="-38" y="-3" width="58" height="4" rx="2" fill="#c8b6ff"/>
+        <rect x="-38" y="6" width="44" height="4" rx="2" fill="#c8b6ff"/>
+        <circle cx="30" cy="12" r="7" fill="#ffb7c5"/></g><g class="s" style="animation-delay:-1.5s">
+        <rect x="-50" y="-30" width="100" height="60" rx="8" fill="#fff4d6"/>
+        <rect x="-38" y="-18" width="48" height="7" rx="3.5" fill="#ff9ec0"/>
+        <rect x="-38" y="-3" width="58" height="4" rx="2" fill="#c8b6ff"/>
+        <rect x="-38" y="6" width="44" height="4" rx="2" fill="#c8b6ff"/>
+        <circle cx="30" cy="12" r="9" fill="#ffb7c5"/></g><g class="s" style="animation-delay:-3.0s">
+        <rect x="-50" y="-30" width="100" height="60" rx="8" fill="#fff4d6"/>
+        <rect x="-38" y="-18" width="56" height="7" rx="3.5" fill="#ff9ec0"/>
+        <rect x="-38" y="-3" width="58" height="4" rx="2" fill="#c8b6ff"/>
+        <rect x="-38" y="6" width="44" height="4" rx="2" fill="#c8b6ff"/>
+        <circle cx="30" cy="12" r="11" fill="#ffb7c5"/></g><g class="s" style="animation-delay:-4.5s">
+        <rect x="-50" y="-30" width="100" height="60" rx="8" fill="#fff4d6"/>
+        <rect x="-38" y="-18" width="64" height="7" rx="3.5" fill="#ff9ec0"/>
+        <rect x="-38" y="-3" width="58" height="4" rx="2" fill="#c8b6ff"/>
+        <rect x="-38" y="6" width="44" height="4" rx="2" fill="#c8b6ff"/>
+        <circle cx="30" cy="12" r="13" fill="#ffb7c5"/></g></g>
+    <text x="26" y="38" class="m">PROJECT 01</text>
+    <text x="26" y="70" class="n" filter="url(#glow)">pptxforge</text>
+    <text x="26" y="96" class="d">PowerPoint decks from Python.</text><text x="26" y="116" class="d">Themed layouts, native 3D models</text><text x="26" y="136" class="d">that morph between slides and</text><text x="26" y="156" class="d">cinematic transitions.</text>
+    <rect x="26" y="180" width="64" height="26" rx="13" fill="#ffb7c5" fill-opacity=".12" stroke="#ffb7c5" stroke-opacity=".4"/><text x="36" y="197" class="g">python</text><rect x="98.4" y="180" width="50" height="26" rx="13" fill="#ffb7c5" fill-opacity=".12" stroke="#ffb7c5" stroke-opacity=".4"/><text x="108.4" y="197" class="g">pptx</text><rect x="156.0" y="180" width="35" height="26" rx="13" fill="#ffb7c5" fill-opacity=".12" stroke="#ffb7c5" stroke-opacity=".4"/><text x="166.0" y="197" class="g">3d</text><rect x="198.8" y="180" width="50" height="26" rx="13" fill="#ffb7c5" fill-opacity=".12" stroke="#ffb7c5" stroke-opacity=".4"/><text x="208.8" y="197" class="g">pypi</text>
   </g>
-  <rect x="1" y="1" width="488" height="228" rx="15" fill="none" stroke="#1d4a28" stroke-width="2"/>
+  <rect x="1" y="1" width="488" height="228" rx="19" fill="none" stroke="#ffb7c5" stroke-opacity=".3" stroke-width="1.5"/>
 </svg>
