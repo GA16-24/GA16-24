@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 352" width="1000" height="352">
+  <defs>
+    <filter id="glow" x="-5%" y="-50%" width="110%" height="200%">
+      <feGaussianBlur stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="2" fill="#000" opacity="0.3"/></pattern>
+    <clipPath id="win"><rect width="1000" height="352" rx="16"/></clipPath>
+  </defs>
+  <style>
+    text { font-family: 'JetBrains Mono', 'SF Mono', ui-monospace, Menlo, Consolas, 'PingFang SC', monospace; font-size: 15px; fill: #39ff88; }
+    .dim { fill: #2f8a50; }
+    .cmd { fill: #d8ffe6; }
+    .out { fill: #8dffb9; }
+    .bar { font-size: 12px; fill: #2f8a50; letter-spacing: 2px; }
+    .cover { fill: #050b07; }
+    .ps { opacity: 0; animation: show 0.01s linear forwards; }
+    .caret { fill: #39ff88; animation: show 0.01s linear forwards, blink 1s steps(1) infinite; }
+    @keyframes show { to { opacity: 1; } }
+    @keyframes blink { 50% { fill-opacity: 0; } }
+    @keyframes type { to { transform: translateX(var(--w)); } }
+  </style>
+  <g clip-path="url(#win)">
+    <rect width="1000" height="352" fill="#050b07"/>
+    <rect width="1000" height="36" fill="#0a1a0f"/>
+    <circle cx="24" cy="18" r="6" fill="#ff5f57"/><circle cx="44" cy="18" r="6" fill="#febc2e"/><circle cx="64" cy="18" r="6" fill="#28c840"/>
+    <text x="500.0" y="23" text-anchor="middle" class="bar">ga24@phosphor · zsh · 100×12</text>
+    <g filter="url(#glow)">
+      <text x="36" y="78" class="ps" style="animation-delay:0.40s">ga24@phosphor<tspan class="dim">:~$</tspan></text>
+      <text x="36" y="78" class="ps" style="animation-delay:0.40s"><tspan dx="153" class="cmd">whoami</tspan></text>
+      <text x="36" y="108" class="out ps" style="animation-delay:1.47s">GA24. student, builder, maker of things that look nicer than they need to.</text>
+      <text x="36" y="138" class="ps" style="animation-delay:1.82s">ga24@phosphor<tspan class="dim">:~$</tspan></text>
+      <text x="36" y="138" class="ps" style="animation-delay:1.82s"><tspan dx="153" class="cmd">cat langs.txt</tspan></text>
+      <text x="36" y="168" class="out ps" style="animation-delay:3.38s">中文 · deutsch · english · python · typescript · swift · lua</text>
+      <text x="36" y="198" class="ps" style="animation-delay:3.73s">ga24@phosphor<tspan class="dim">:~$</tspan></text>
+      <text x="36" y="198" class="ps" style="animation-delay:3.73s"><tspan dx="153" class="cmd">ls ~/lab</tspan></text>
+      <text x="36" y="228" class="out ps" style="animation-delay:4.94s">pptxforge/  selfobserver/  phosphor-lab/  shelfi-ios/  roblox-obby/</text>
+      <text x="36" y="258" class="ps" style="animation-delay:5.29s">ga24@phosphor<tspan class="dim">:~$</tspan></text>
+      <text x="36" y="258" class="ps" style="animation-delay:5.29s"><tspan dx="153" class="cmd">echo $HABIT</tspan></text>
+      <text x="36" y="288" class="out ps" style="animation-delay:6.71s">turning every school presentation into a web app. yes, every one.</text>
+      <text x="36" y="318" class="ps" style="animation-delay:7.06s">ga24@phosphor<tspan class="dim">:~$</tspan></text>
+      <rect x="189" y="303" width="9" height="18" class="caret ps" style="animation-delay:7.06s"/>
+    </g>
+    <rect x="187" y="61" width="1000" height="24" class="cover" style="--w:58px;animation:type 0.42s steps(6) 0.70s forwards"/>
+    <rect x="187" y="121" width="1000" height="24" class="cover" style="--w:121px;animation:type 0.91s steps(13) 2.12s forwards"/>
+    <rect x="187" y="181" width="1000" height="24" class="cover" style="--w:76px;animation:type 0.56s steps(8) 4.03s forwards"/>
+    <rect x="187" y="241" width="1000" height="24" class="cover" style="--w:103px;animation:type 0.77s steps(11) 5.59s forwards"/>
+    <rect width="1000" height="352" fill="url(#scan)"/>
+  </g>
+  <rect x="1" y="1" width="998" height="350" rx="15" fill="none" stroke="#1d4a28" stroke-width="2"/>
+</svg>

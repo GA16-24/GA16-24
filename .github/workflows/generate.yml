@@ -1,0 +1,44 @@
+name: generate
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # STATS_TOKEN is optional. Without it only public contributions are counted.
+      - name: stats
+        run: mkdir -p dist && node scripts/stats.mjs ${{ github.repository_owner }} dist/stats.svg
+        env:
+          GITHUB_TOKEN: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: snake
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/snake.svg?color_snake=#39ff88&color_dots=#0b1a10,#0f3d1f,#1a7a3c,#2bc466,#39ff88&color_dot_border=#050b07
+            dist/snake-light.svg?color_snake=#0f7a3c&color_dots=#e6ede8,#b5e8c7,#6fd697,#2bb35e,#0f7a3c
+
+      - name: push to output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+          keep_history: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
