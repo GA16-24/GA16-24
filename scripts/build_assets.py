@@ -124,7 +124,7 @@ def header():
 
 def about():
     rows = [("speaks", "中文 · deutsch · english"), ("writes", "python · typescript · swift · lua"),
-            ("building", "pptxforge, selfobserver, phosphor-lab, shelfi"), ("habit", "every school presentation becomes a web app"),
+            ("building", "cool things (:"), ("habit", "every school presentation becomes a web app"),
             ("fav anime", "tonikawa: over the moon for you ☾")]
     top, lh = 108, 36
     H = top + len(rows) * lh + 10
