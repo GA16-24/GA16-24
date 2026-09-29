@@ -115,7 +115,7 @@ def header():
       <path class="tw" style="animation-delay:-1.5s" fill="#ffb7c5" d="M40 70 Q41 77 48 78 Q41 79 40 86 Q39 79 32 78 Q39 77 40 70Z"/>
     </g>
     <text x="60" y="210" class="jp">とにかく、つくる。</text>
-    <text x="62" y="244" class="en">tools, decks &amp; odd visual machines</text>
+    <text x="62" y="244" class="en">build &amp; build</text>
     {petals(14, W, H)}
   </g>
 </svg>
