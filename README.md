@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/terminal.svg" width="100%" alt="whoami: GA24, student and builder. Speaks Chinese, German, English, Python, TypeScript, Swift and Lua."/>
+  <img src="assets/about.svg" width="100%" alt="About: student and builder. Speaks Chinese, German, English. Writes Python, TypeScript, Swift, Lua."/>
 </p>
 
 <p align="center">

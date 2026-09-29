@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 260" width="1000" height="260">
+  <style>
+    text { font-family: 'JetBrains Mono', 'SF Mono', ui-monospace, Menlo, Consolas, 'PingFang SC', monospace; }
+    .h { font-size: 13px; fill: #39ff88; letter-spacing: 3px; }
+    .s { font-size: 13px; fill: #4f7a5e; letter-spacing: 1px; }
+    .k { font-size: 14px; fill: #4f7a5e; }
+    .v { font-size: 14px; fill: #cfeedd; }
+    .r { opacity: 0; animation: in .6s ease-out forwards; }
+    @keyframes in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+    .dot { fill: #39ff88; animation: pulse 2.4s ease-in-out infinite; }
+    @keyframes pulse { 50% { opacity: .25; } }
+  </style>
+  <rect x="1" y="1" width="998" height="258" rx="16" fill="#060a08" stroke="#16301f" stroke-width="1.5"/>
+  <circle cx="44" cy="45" r="4" class="dot"/>
+  <text x="60" y="50" class="h">ABOUT</text>
+  <text x="960" y="50" class="s" text-anchor="end">student · builder</text>
+  <line x1="40" y1="72" x2="960" y2="72" stroke="#16301f"/>
+  <g class="r" style="animation-delay:0.25s"><text x="40" y="110" class="k">speaks</text><text x="200" y="110" class="v">中文 · deutsch · english</text></g><g class="r" style="animation-delay:0.37s"><text x="40" y="144" class="k">writes</text><text x="200" y="144" class="v">python · typescript · swift · lua</text></g><g class="r" style="animation-delay:0.49s"><text x="40" y="178" class="k">building</text><text x="200" y="178" class="v">pptxforge, selfobserver, phosphor-lab, shelfi</text></g><g class="r" style="animation-delay:0.61s"><text x="40" y="212" class="k">habit</text><text x="200" y="212" class="v">every school presentation becomes a web app</text></g>
+</svg>
