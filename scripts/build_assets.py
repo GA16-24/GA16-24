@@ -258,7 +258,10 @@ def stack():
 
 def footer():
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 140" width="1000" height="140">
-  <defs><linearGradient id="t" x1="0" x2="1"><stop offset="0" stop-color="#ffb7c5"/><stop offset="1" stop-color="#c8b6ff"/></linearGradient></defs>
+  <defs>
+    <linearGradient id="t" x1="0" x2="1"><stop offset="0" stop-color="#ffb7c5"/><stop offset="1" stop-color="#c8b6ff"/></linearGradient>
+    {SKY}
+  </defs>
   <style>
     text {{ {FONT} }}
     .rocket {{ animation: fly 5s ease-in-out infinite; }}
@@ -266,13 +269,14 @@ def footer():
     .trail {{ stroke-dasharray: 4 8; animation: dash 1s linear infinite; }}
     @keyframes dash {{ to {{ stroke-dashoffset: -12; }} }}{STAR_CSS}
   </style>
+  <rect width="1000" height="140" rx="20" fill="url(#sky)"/>
   {stars(40, 1000, 110, big=.2).replace('fill="#fff"', 'fill="#c8b6ff"')}
   <circle cx="780" cy="44" r="24" fill="#f7e6bd"/><circle cx="772" cy="38" r="5" fill="#f1dcae"/><circle cx="788" cy="52" r="4" fill="#f1dcae"/>
   <g class="rocket" transform="translate(440 104)">
     <path class="trail" d="M-60 12 Q-30 8 -8 2" fill="none" stroke="#ffb7c5" stroke-width="2" stroke-linecap="round"/>
     <path d="M0 0 C6 -6 18 -8 24 -6 C22 0 16 8 8 10 Z" fill="#fff4d6"/><circle cx="14" cy="-2" r="2.5" fill="#ff9ec0"/>
   </g>
-  <text x="500" y="130" text-anchor="middle" font-size="15" font-weight="700" fill="url(#t)" letter-spacing="3">fly me to the moon ☾ またね</text>
+  <text x="500" y="130" text-anchor="middle" font-size="15" font-weight="700" fill="url(#t)" letter-spacing="3" dy="-6">fly me to the moon ☾ またね</text>
 </svg>
 '''
 
