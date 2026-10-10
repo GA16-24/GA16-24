@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 240" width="1000" height="240">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1030"/><stop offset=".6" stop-color="#2a1d5c"/><stop offset="1" stop-color="#4a3070"/></linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <clipPath id="c"><rect width="1000" height="240" rx="20"/></clipPath>
+  </defs>
+  <style>
+    text { font-family: 'Hiragino Maru Gothic ProN', 'M PLUS Rounded 1c', 'Nunito', 'Yu Gothic', system-ui, sans-serif; }
+    .k { font-size: 14px; fill: #a99bd6; }
+    .v { font-size: 18px; font-weight: 800; fill: #ffd1dc; }
+    .t { font-size: 12px; fill: #a99bd6; letter-spacing: 2px; }
+    .row { opacity: 0; animation: in .5s ease-out forwards; }
+    @keyframes in { from { opacity: 0; transform: translateX(-6px); } to { opacity: 1; transform: none; } }
+    .ln { fill: none; stroke: #c8b6ff; stroke-opacity: .45; stroke-width: 1.2; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.6s ease-out .3s forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    .st { fill: #fff4d6; opacity: 0; animation: pop .4s ease-out forwards, tw 3s ease-in-out 3s infinite; }
+    @keyframes pop { to { opacity: 1; } }
+    @keyframes tw { 50% { opacity: .45; } }
+  </style>
+  <g clip-path="url(#c)">
+    <rect width="1000" height="240" fill="url(#sky)"/>
+    <circle cx="930" cy="60" r="90" fill="#fff4d6" opacity=".05"/>
+    <line x1="322" y1="30" x2="322" y2="210" stroke="#ffb7c5" stroke-opacity=".25" stroke-dasharray="2 6" stroke-linecap="round"/>
+    <path class="ln" pathLength="1" d="M340.0,190.0 L352.0,190.0 L364.0,190.0 L376.1,190.0 L388.1,190.0 L400.1,190.0 L412.1,88.7 L424.1,180.9 L436.2,117.5 L448.2,127.9 L460.2,141.2 L472.2,177.2 L484.2,190.0 L496.3,190.0 L508.3,190.0 L520.3,190.0 L532.3,177.2 L544.3,190.0 L556.3,167.8 L568.4,158.6 L580.4,180.9 L592.4,190.0 L604.4,190.0 L616.4,190.0 L628.5,177.2 L640.5,190.0 L652.5,190.0 L664.5,190.0 L676.5,190.0 L688.6,111.0 L700.6,167.8 L712.6,190.0 L724.6,171.9 L736.6,190.0 L748.7,190.0 L760.7,190.0 L772.7,190.0 L784.7,190.0 L796.7,190.0 L808.8,190.0 L820.8,190.0 L832.8,147.5 L844.8,134.9 L856.8,142.0 L868.8,164.4 L880.9,174.3 L892.9,180.9 L904.9,139.5 L916.9,111.0 L928.9,109.5 L941.0,86.7 L953.0,40.0 L965.0,66.4"/>
+    <g filter="url(#glow)"><circle cx="340.0" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="352.0" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="364.0" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="376.1" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="388.1" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="400.1" cy="190.0" r="1.2" fill="#6b5aa6"/><path class="st" style="animation-delay:0.58s, -2.4s" d="M412.1 82.5 Q412.1 88.7 418.3 88.7 Q412.1 88.7 412.1 94.9 Q412.1 88.7 405.90000000000003 88.7 Q412.1 88.7 412.1 82.5Z"/><path class="st" style="animation-delay:0.61s, 0.0s" d="M424.1 177.9 Q424.1 180.9 427.1 180.9 Q424.1 180.9 424.1 183.9 Q424.1 180.9 421.1 180.9 Q424.1 180.9 424.1 177.9Z"/><path class="st" style="animation-delay:0.64s, -0.4s" d="M436.2 112.9 Q436.2 117.5 440.8 117.5 Q436.2 117.5 436.2 122.1 Q436.2 117.5 431.59999999999997 117.5 Q436.2 117.5 436.2 112.9Z"/><path class="st" style="animation-delay:0.67s, -0.8s" d="M448.2 123.7 Q448.2 127.9 452.4 127.9 Q448.2 127.9 448.2 132.1 Q448.2 127.9 444 127.9 Q448.2 127.9 448.2 123.7Z"/><path class="st" style="animation-delay:0.70s, -1.2s" d="M460.2 137.5 Q460.2 141.2 463.9 141.2 Q460.2 141.2 460.2 144.89999999999998 Q460.2 141.2 456.5 141.2 Q460.2 141.2 460.2 137.5Z"/><path class="st" style="animation-delay:0.73s, -1.6s" d="M472.2 174.1 Q472.2 177.2 475.3 177.2 Q472.2 177.2 472.2 180.29999999999998 Q472.2 177.2 469.09999999999997 177.2 Q472.2 177.2 472.2 174.1Z"/><circle cx="484.2" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="496.3" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="508.3" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="520.3" cy="190.0" r="1.2" fill="#6b5aa6"/><path class="st" style="animation-delay:0.88s, -0.8s" d="M532.3 174.1 Q532.3 177.2 535.4 177.2 Q532.3 177.2 532.3 180.29999999999998 Q532.3 177.2 529.1999999999999 177.2 Q532.3 177.2 532.3 174.1Z"/><circle cx="544.3" cy="190.0" r="1.2" fill="#6b5aa6"/><path class="st" style="animation-delay:0.94s, -1.6s" d="M556.3 164.60000000000002 Q556.3 167.8 559.5 167.8 Q556.3 167.8 556.3 171 Q556.3 167.8 553.0999999999999 167.8 Q556.3 167.8 556.3 164.60000000000002Z"/><path class="st" style="animation-delay:0.97s, -2.0s" d="M568.4 155.29999999999998 Q568.4 158.6 571.6999999999999 158.6 Q568.4 158.6 568.4 161.9 Q568.4 158.6 565.1 158.6 Q568.4 158.6 568.4 155.29999999999998Z"/><path class="st" style="animation-delay:1.00s, -2.4s" d="M580.4 177.9 Q580.4 180.9 583.4 180.9 Q580.4 180.9 580.4 183.9 Q580.4 180.9 577.4 180.9 Q580.4 180.9 580.4 177.9Z"/><circle cx="592.4" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="604.4" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="616.4" cy="190.0" r="1.2" fill="#6b5aa6"/><path class="st" style="animation-delay:1.12s, -1.2s" d="M628.5 174.1 Q628.5 177.2 631.6 177.2 Q628.5 177.2 628.5 180.29999999999998 Q628.5 177.2 625.4 177.2 Q628.5 177.2 628.5 174.1Z"/><circle cx="640.5" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="652.5" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="664.5" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="676.5" cy="190.0" r="1.2" fill="#6b5aa6"/><path class="st" style="animation-delay:1.27s, -0.4s" d="M688.6 106.1 Q688.6 111 693.5 111 Q688.6 111 688.6 115.9 Q688.6 111 683.7 111 Q688.6 111 688.6 106.1Z"/><path class="st" style="animation-delay:1.30s, -0.8s" d="M700.6 164.60000000000002 Q700.6 167.8 703.8000000000001 167.8 Q700.6 167.8 700.6 171 Q700.6 167.8 697.4 167.8 Q700.6 167.8 700.6 164.60000000000002Z"/><circle cx="712.6" cy="190.0" r="1.2" fill="#6b5aa6"/><path class="st" style="animation-delay:1.36s, -1.6s" d="M724.6 168.8 Q724.6 171.9 727.7 171.9 Q724.6 171.9 724.6 175 Q724.6 171.9 721.5 171.9 Q724.6 171.9 724.6 168.8Z"/><circle cx="736.6" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="748.7" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="760.7" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="772.7" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="784.7" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="796.7" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="808.8" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="820.8" cy="190.0" r="1.2" fill="#6b5aa6"/><path class="st" style="animation-delay:1.63s, -2.4s" d="M832.8 143.9 Q832.8 147.5 836.4 147.5 Q832.8 147.5 832.8 151.1 Q832.8 147.5 829.1999999999999 147.5 Q832.8 147.5 832.8 143.9Z"/><path class="st" style="animation-delay:1.66s, 0.0s" d="M844.8 131 Q844.8 134.9 848.6999999999999 134.9 Q844.8 134.9 844.8 138.8 Q844.8 134.9 840.9 134.9 Q844.8 134.9 844.8 131Z"/><path class="st" style="animation-delay:1.69s, -0.4s" d="M856.8 138.3 Q856.8 142 860.5 142 Q856.8 142 856.8 145.7 Q856.8 142 853.0999999999999 142 Q856.8 142 856.8 138.3Z"/><path class="st" style="animation-delay:1.72s, -0.8s" d="M868.8 161.20000000000002 Q868.8 164.4 872 164.4 Q868.8 164.4 868.8 167.6 Q868.8 164.4 865.5999999999999 164.4 Q868.8 164.4 868.8 161.20000000000002Z"/><path class="st" style="animation-delay:1.75s, -1.2s" d="M880.9 171.20000000000002 Q880.9 174.3 884 174.3 Q880.9 174.3 880.9 177.4 Q880.9 174.3 877.8 174.3 Q880.9 174.3 880.9 171.20000000000002Z"/><path class="st" style="animation-delay:1.78s, -1.6s" d="M892.9 177.9 Q892.9 180.9 895.9 180.9 Q892.9 180.9 892.9 183.9 Q892.9 180.9 889.9 180.9 Q892.9 180.9 892.9 177.9Z"/><path class="st" style="animation-delay:1.81s, -2.0s" d="M904.9 135.7 Q904.9 139.5 908.6999999999999 139.5 Q904.9 139.5 904.9 143.3 Q904.9 139.5 901.1 139.5 Q904.9 139.5 904.9 135.7Z"/><path class="st" style="animation-delay:1.84s, -2.4s" d="M916.9 106.1 Q916.9 111 921.8 111 Q916.9 111 916.9 115.9 Q916.9 111 912 111 Q916.9 111 916.9 106.1Z"/><path class="st" style="animation-delay:1.87s, 0.0s" d="M928.9 104.5 Q928.9 109.5 933.9 109.5 Q928.9 109.5 928.9 114.5 Q928.9 109.5 923.9 109.5 Q928.9 109.5 928.9 104.5Z"/><path class="st" style="animation-delay:1.90s, -0.4s" d="M941 80.4 Q941 86.7 947.3 86.7 Q941 86.7 941 93 Q941 86.7 934.7 86.7 Q941 86.7 941 80.4Z"/><path class="st" style="animation-delay:1.93s, -0.8s" d="M953 30 Q953 40 963 40 Q953 40 953 50 Q953 40 943 40 Q953 40 953 30Z"/><path class="st" style="animation-delay:1.96s, -1.2s" d="M965 58.60000000000001 Q965 66.4 972.8 66.4 Q965 66.4 965 74.2 Q965 66.4 957.2 66.4 Q965 66.4 965 58.60000000000001Z"/></g>
+    <text x="340" y="222" class="t">52 weeks ago</text>
+    <text x="965" y="222" class="t" text-anchor="end">now ☾ best week 274</text>
+    
+    <g class="row" style="animation-delay:0.00s">
+      <text x="32" y="58" class="k">contributions this year</text>
+      <text x="300" y="58" class="v" text-anchor="end">1,252</text>
+    </g>
+    <g class="row" style="animation-delay:0.12s">
+      <text x="32" y="94" class="k">current streak</text>
+      <text x="300" y="94" class="v" text-anchor="end">40 days</text>
+    </g>
+    <g class="row" style="animation-delay:0.24s">
+      <text x="32" y="130" class="k">longest streak</text>
+      <text x="300" y="130" class="v" text-anchor="end">40 days</text>
+    </g>
+    <g class="row" style="animation-delay:0.36s">
+      <text x="32" y="166" class="k">best day</text>
+      <text x="300" y="166" class="v" text-anchor="end">86 on 11/22</text>
+    </g>
+    <g class="row" style="animation-delay:0.48s">
+      <text x="32" y="202" class="k">prs · commits</text>
+      <text x="300" y="202" class="v" text-anchor="end">101 · 282</text>
+    </g>
+  </g>
+  <rect x="1" y="1" width="998" height="238" rx="19" fill="none" stroke="#ffb7c5" stroke-opacity=".3" stroke-width="1.5"/>
+</svg>
