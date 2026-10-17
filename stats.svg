@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 240" width="1000" height="240">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1030"/><stop offset=".6" stop-color="#2a1d5c"/><stop offset="1" stop-color="#4a3070"/></linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <clipPath id="c"><rect width="1000" height="240" rx="20"/></clipPath>
+  </defs>
+  <style>
+    text { font-family: 'Hiragino Maru Gothic ProN', 'M PLUS Rounded 1c', 'Nunito', 'Yu Gothic', system-ui, sans-serif; }
+    .k { font-size: 14px; fill: #a99bd6; }
+    .v { font-size: 18px; font-weight: 800; fill: #ffd1dc; }
+    .t { font-size: 12px; fill: #a99bd6; letter-spacing: 2px; }
+    .row { opacity: 0; animation: in .5s ease-out forwards; }
+    @keyframes in { from { opacity: 0; transform: translateX(-6px); } to { opacity: 1; transform: none; } }
+    .ln { fill: none; stroke: #c8b6ff; stroke-opacity: .45; stroke-width: 1.2; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.6s ease-out .3s forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    .st { fill: #fff4d6; opacity: 0; animation: pop .4s ease-out forwards, tw 3s ease-in-out 3s infinite; }
+    @keyframes pop { to { opacity: 1; } }
+    @keyframes tw { 50% { opacity: .45; } }
+  </style>
+  <g clip-path="url(#c)">
+    <rect width="1000" height="240" fill="url(#sky)"/>
+    <circle cx="930" cy="60" r="90" fill="#fff4d6" opacity=".05"/>
+    <line x1="322" y1="30" x2="322" y2="210" stroke="#ffb7c5" stroke-opacity=".25" stroke-dasharray="2 6" stroke-linecap="round"/>
+    <path class="ln" pathLength="1" d="M340.0,190.0 L352.0,190.0 L364.0,190.0 L376.1,190.0 L388.1,190.0 L400.1,100.5 L412.1,182.0 L424.1,125.9 L436.2,135.1 L448.2,146.9 L460.2,178.7 L472.2,190.0 L484.2,190.0 L496.3,190.0 L508.3,190.0 L520.3,178.7 L532.3,190.0 L544.3,170.4 L556.3,162.3 L568.4,182.0 L580.4,190.0 L592.4,190.0 L604.4,190.0 L616.4,178.7 L628.5,190.0 L640.5,190.0 L652.5,190.0 L664.5,190.0 L676.5,120.2 L688.6,170.4 L700.6,190.0 L712.6,174.0 L724.6,190.0 L736.6,190.0 L748.7,190.0 L760.7,190.0 L772.7,190.0 L784.7,166.0 L796.7,159.0 L808.8,190.0 L820.8,152.4 L832.8,141.3 L844.8,147.6 L856.8,167.4 L868.8,176.1 L880.9,182.0 L892.9,145.4 L904.9,120.2 L916.9,118.8 L928.9,98.7 L941.0,40.0 L953.0,74.8 L965.0,82.9"/>
+    <g filter="url(#glow)"><circle cx="340.0" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="352.0" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="364.0" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="376.1" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="388.1" cy="190.0" r="1.2" fill="#6b5aa6"/><path class="st" style="animation-delay:0.55s, -2.0s" d="M400.1 95 Q400.1 100.5 405.6 100.5 Q400.1 100.5 400.1 106 Q400.1 100.5 394.6 100.5 Q400.1 100.5 400.1 95Z"/><path class="st" style="animation-delay:0.58s, -2.4s" d="M412.1 179 Q412.1 182 415.1 182 Q412.1 182 412.1 185 Q412.1 182 409.1 182 Q412.1 182 412.1 179Z"/><path class="st" style="animation-delay:0.61s, 0.0s" d="M424.1 121.60000000000001 Q424.1 125.9 428.40000000000003 125.9 Q424.1 125.9 424.1 130.20000000000002 Q424.1 125.9 419.8 125.9 Q424.1 125.9 424.1 121.60000000000001Z"/><path class="st" style="animation-delay:0.64s, -0.4s" d="M436.2 131.2 Q436.2 135.1 440.09999999999997 135.1 Q436.2 135.1 436.2 139 Q436.2 135.1 432.3 135.1 Q436.2 135.1 436.2 131.2Z"/><path class="st" style="animation-delay:0.67s, -0.8s" d="M448.2 143.3 Q448.2 146.9 451.8 146.9 Q448.2 146.9 448.2 150.5 Q448.2 146.9 444.59999999999997 146.9 Q448.2 146.9 448.2 143.3Z"/><path class="st" style="animation-delay:0.70s, -1.2s" d="M460.2 175.7 Q460.2 178.7 463.2 178.7 Q460.2 178.7 460.2 181.7 Q460.2 178.7 457.2 178.7 Q460.2 178.7 460.2 175.7Z"/><circle cx="472.2" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="484.2" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="496.3" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="508.3" cy="190.0" r="1.2" fill="#6b5aa6"/><path class="st" style="animation-delay:0.85s, -0.4s" d="M520.3 175.7 Q520.3 178.7 523.3 178.7 Q520.3 178.7 520.3 181.7 Q520.3 178.7 517.3 178.7 Q520.3 178.7 520.3 175.7Z"/><circle cx="532.3" cy="190.0" r="1.2" fill="#6b5aa6"/><path class="st" style="animation-delay:0.91s, -1.2s" d="M544.3 167.3 Q544.3 170.4 547.4 170.4 Q544.3 170.4 544.3 173.5 Q544.3 170.4 541.1999999999999 170.4 Q544.3 170.4 544.3 167.3Z"/><path class="st" style="animation-delay:0.94s, -1.6s" d="M556.3 159.10000000000002 Q556.3 162.3 559.5 162.3 Q556.3 162.3 556.3 165.5 Q556.3 162.3 553.0999999999999 162.3 Q556.3 162.3 556.3 159.10000000000002Z"/><path class="st" style="animation-delay:0.97s, -2.0s" d="M568.4 179 Q568.4 182 571.4 182 Q568.4 182 568.4 185 Q568.4 182 565.4 182 Q568.4 182 568.4 179Z"/><circle cx="580.4" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="592.4" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="604.4" cy="190.0" r="1.2" fill="#6b5aa6"/><path class="st" style="animation-delay:1.09s, -0.8s" d="M616.4 175.7 Q616.4 178.7 619.4 178.7 Q616.4 178.7 616.4 181.7 Q616.4 178.7 613.4 178.7 Q616.4 178.7 616.4 175.7Z"/><circle cx="628.5" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="640.5" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="652.5" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="664.5" cy="190.0" r="1.2" fill="#6b5aa6"/><path class="st" style="animation-delay:1.24s, 0.0s" d="M676.5 115.7 Q676.5 120.2 681 120.2 Q676.5 120.2 676.5 124.7 Q676.5 120.2 672 120.2 Q676.5 120.2 676.5 115.7Z"/><path class="st" style="animation-delay:1.27s, -0.4s" d="M688.6 167.3 Q688.6 170.4 691.7 170.4 Q688.6 170.4 688.6 173.5 Q688.6 170.4 685.5 170.4 Q688.6 170.4 688.6 167.3Z"/><circle cx="700.6" cy="190.0" r="1.2" fill="#6b5aa6"/><path class="st" style="animation-delay:1.33s, -1.2s" d="M712.6 170.9 Q712.6 174 715.7 174 Q712.6 174 712.6 177.1 Q712.6 174 709.5 174 Q712.6 174 712.6 170.9Z"/><circle cx="724.6" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="736.6" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="748.7" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="760.7" cy="190.0" r="1.2" fill="#6b5aa6"/><circle cx="772.7" cy="190.0" r="1.2" fill="#6b5aa6"/><path class="st" style="animation-delay:1.51s, -0.8s" d="M784.7 162.8 Q784.7 166 787.9000000000001 166 Q784.7 166 784.7 169.2 Q784.7 166 781.5 166 Q784.7 166 784.7 162.8Z"/><path class="st" style="animation-delay:1.54s, -1.2s" d="M796.7 155.7 Q796.7 159 800 159 Q796.7 159 796.7 162.3 Q796.7 159 793.4000000000001 159 Q796.7 159 796.7 155.7Z"/><circle cx="808.8" cy="190.0" r="1.2" fill="#6b5aa6"/><path class="st" style="animation-delay:1.60s, -2.0s" d="M820.8 149 Q820.8 152.4 824.1999999999999 152.4 Q820.8 152.4 820.8 155.8 Q820.8 152.4 817.4 152.4 Q820.8 152.4 820.8 149Z"/><path class="st" style="animation-delay:1.63s, -2.4s" d="M832.8 137.60000000000002 Q832.8 141.3 836.5 141.3 Q832.8 141.3 832.8 145 Q832.8 141.3 829.0999999999999 141.3 Q832.8 141.3 832.8 137.60000000000002Z"/><path class="st" style="animation-delay:1.66s, 0.0s" d="M844.8 144 Q844.8 147.6 848.4 147.6 Q844.8 147.6 844.8 151.2 Q844.8 147.6 841.1999999999999 147.6 Q844.8 147.6 844.8 144Z"/><path class="st" style="animation-delay:1.69s, -0.4s" d="M856.8 164.20000000000002 Q856.8 167.4 860 167.4 Q856.8 167.4 856.8 170.6 Q856.8 167.4 853.5999999999999 167.4 Q856.8 167.4 856.8 164.20000000000002Z"/><path class="st" style="animation-delay:1.72s, -0.8s" d="M868.8 173 Q868.8 176.1 871.9 176.1 Q868.8 176.1 868.8 179.2 Q868.8 176.1 865.6999999999999 176.1 Q868.8 176.1 868.8 173Z"/><path class="st" style="animation-delay:1.75s, -1.2s" d="M880.9 179 Q880.9 182 883.9 182 Q880.9 182 880.9 185 Q880.9 182 877.9 182 Q880.9 182 880.9 179Z"/><path class="st" style="animation-delay:1.78s, -1.6s" d="M892.9 141.8 Q892.9 145.4 896.5 145.4 Q892.9 145.4 892.9 149 Q892.9 145.4 889.3 145.4 Q892.9 145.4 892.9 141.8Z"/><path class="st" style="animation-delay:1.81s, -2.0s" d="M904.9 115.7 Q904.9 120.2 909.4 120.2 Q904.9 120.2 904.9 124.7 Q904.9 120.2 900.4 120.2 Q904.9 120.2 904.9 115.7Z"/><path class="st" style="animation-delay:1.84s, -2.4s" d="M916.9 114.2 Q916.9 118.8 921.5 118.8 Q916.9 118.8 916.9 123.39999999999999 Q916.9 118.8 912.3 118.8 Q916.9 118.8 916.9 114.2Z"/><path class="st" style="animation-delay:1.87s, 0.0s" d="M928.9 93.10000000000001 Q928.9 98.7 934.5 98.7 Q928.9 98.7 928.9 104.3 Q928.9 98.7 923.3 98.7 Q928.9 98.7 928.9 93.10000000000001Z"/><path class="st" style="animation-delay:1.90s, -0.4s" d="M941 30 Q941 40 951 40 Q941 40 941 50 Q941 40 931 40 Q941 40 941 30Z"/><path class="st" style="animation-delay:1.93s, -0.8s" d="M953 67.7 Q953 74.8 960.1 74.8 Q953 74.8 953 81.89999999999999 Q953 74.8 945.9 74.8 Q953 74.8 953 67.7Z"/><path class="st" style="animation-delay:1.96s, -1.2s" d="M965 76.30000000000001 Q965 82.9 971.6 82.9 Q965 82.9 965 89.5 Q965 82.9 958.4 82.9 Q965 82.9 965 76.30000000000001Z"/></g>
+    <text x="340" y="222" class="t">52 weeks ago</text>
+    <text x="965" y="222" class="t" text-anchor="end">now ☾ best week 351</text>
+    
+    <g class="row" style="animation-delay:0.00s">
+      <text x="32" y="58" class="k">contributions this year</text>
+      <text x="300" y="58" class="v" text-anchor="end">1,553</text>
+    </g>
+    <g class="row" style="animation-delay:0.12s">
+      <text x="32" y="94" class="k">current streak</text>
+      <text x="300" y="94" class="v" text-anchor="end">47 days</text>
+    </g>
+    <g class="row" style="animation-delay:0.24s">
+      <text x="32" y="130" class="k">longest streak</text>
+      <text x="300" y="130" class="v" text-anchor="end">47 days</text>
+    </g>
+    <g class="row" style="animation-delay:0.36s">
+      <text x="32" y="166" class="k">best day</text>
+      <text x="300" y="166" class="v" text-anchor="end">104 on 10/02</text>
+    </g>
+    <g class="row" style="animation-delay:0.48s">
+      <text x="32" y="202" class="k">prs · commits</text>
+      <text x="300" y="202" class="v" text-anchor="end">101 · 282</text>
+    </g>
+  </g>
+  <rect x="1" y="1" width="998" height="238" rx="19" fill="none" stroke="#ffb7c5" stroke-opacity=".3" stroke-width="1.5"/>
+</svg>
